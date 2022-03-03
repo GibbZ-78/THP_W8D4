@@ -9,30 +9,72 @@
 /*  (c) 2022 Itemacy for THP  */
 /******************************/
 
-// JBV - Global constant: table of equivalence between nucleotids and amin acids
-const nucleotids2aminacids = [
-  { nuc: "UCU", amin: "Sérine" },
-  { nuc: "UCC", amin: "Sérine" },
-  { nuc: "UCA", amin: "Sérine" },
-  { nuc: "UCG", amin: "Sérine" },
-  { nuc: "AGU", amin: "Sérine" },
-  { nuc: "AGC", amin: "Sérine" },
-  { nuc: "CCU", amin: "Proline" },
-  { nuc: "CCC", amin: "Proline" },
-  { nuc: "CCA", amin: "Proline" },
-  { nuc: "CCG", amin: "Proline" },
-  { nuc: "UUA", amin: "Leucine" },
-  { nuc: "UUG", amin: "Leucine" },
-  { nuc: "UUU", amin: "Phénylalanine" },
-  { nuc: "UUC", amin: "Phénylalanine" },
-  { nuc: "CGU", amin: "Arginine" },
-  { nuc: "CGC", amin: "Arginine" },
-  { nuc: "CGA", amin: "Arginine" },
-  { nuc: "CGG", amin: "Arginine" },
-  { nuc: "AGA", amin: "Arginine" },
-  { nuc: "AGG", amin: "Arginine" },
-  { nuc: "UAU", amin: "Tyrosine" },
-  { nuc: "UAC", amin: "Tyrosine" }
+// JBV - Global constant: equivalence table between the 64 nucleic bases and amin acids
+const nucleicbases2aminacids = [
+  { nuc: 'UUU', amin: 'Alanine' },
+  { nuc: 'UUC', amin: 'Alanine' },
+  { nuc: 'UUA', amin: 'Lysine' },
+  { nuc: 'UUG', amin: 'Lysine' },
+  { nuc: 'UCU', amin: 'Sérine' },
+  { nuc: 'UCC', amin: 'Sérine' },
+  { nuc: 'UCA', amin: 'Sérine' },
+  { nuc: 'UCG', amin: 'Sérine' },
+  { nuc: 'UAU', amin: 'Tyrosine' },
+  { nuc: 'UAC', amin: 'Tyrosine' },
+  { nuc: 'UAA', amin: 'STOP' },
+  { nuc: 'UAG', amin: 'STOP' },
+  { nuc: 'UGU', amin: 'Alanine' },
+  { nuc: 'UGC', amin: 'Alanine' },
+  { nuc: 'UGA', amin: 'STOP' },
+  { nuc: 'UGG', amin: 'Tryptophane' },
+  { nuc: 'CUU', amin: 'Lysine' },
+  { nuc: 'CUC', amin: 'Lysine' },
+  { nuc: 'CUA', amin: 'Lysine' },
+  { nuc: 'CUG', amin: 'Lysine' },
+  { nuc: 'CCU', amin: 'Proline' },
+  { nuc: 'CCC', amin: 'Proline' },
+  { nuc: 'CCA', amin: 'Proline' },
+  { nuc: 'CCG', amin: 'Proline' },
+  { nuc: 'CAU', amin: 'Alanine' },
+  { nuc: 'CAC', amin: 'Alanine' },
+  { nuc: 'CAA', amin: 'Pyrrolysine' },
+  { nuc: 'CAG', amin: 'Pyrrolysine' },
+  { nuc: 'CGU', amin: 'Pyrrolysine' },
+  { nuc: 'CGC', amin: 'Pyrrolysine' },
+  { nuc: 'CGA', amin: 'Pyrrolysine' },
+  { nuc: 'CGG', amin: 'Pyrrolysine' },
+  { nuc: 'AUU', amin: 'Alanine' },
+  { nuc: 'AUC', amin: 'Alanine' },
+  { nuc: 'AUA', amin: 'Alanine' },
+  { nuc: 'AUG', amin: 'Méthionine' },
+  { nuc: 'ACU', amin: 'Thréonine' },
+  { nuc: 'ACC', amin: 'Thréonine' },
+  { nuc: 'ACA', amin: 'Thréonine' },
+  { nuc: 'ACG', amin: 'Thréonine' },
+  { nuc: 'AAU', amin: 'Phénylalanine' },
+  { nuc: 'AAC', amin: 'Phénylalanine' },
+  { nuc: 'AAA', amin: 'Lysine' },
+  { nuc: 'AAG', amin: 'Lysine' },
+  { nuc: 'AGU', amin: 'Sérine' },
+  { nuc: 'AGC', amin: 'Sérine' },
+  { nuc: 'AGA', amin: 'Pyrrolysine' },
+  { nuc: 'AGG', amin: 'Pyrrolysine' },
+  { nuc: 'GUU', amin: 'Thréonine' },
+  { nuc: 'GUC', amin: 'Thréonine' },
+  { nuc: 'GUA', amin: 'Thréonine' },
+  { nuc: 'GUG', amin: 'Thréonine' },
+  { nuc: 'GCU', amin: 'Alanine' },
+  { nuc: 'GCC', amin: 'Alanine' },
+  { nuc: 'GCA', amin: 'Alanine' },
+  { nuc: 'GCG', amin: 'Alanine' },
+  { nuc: 'GAU', amin: 'Alanine' },
+  { nuc: 'GAC', amin: 'Alanine' },
+  { nuc: 'GAA', amin: 'Alanine' },
+  { nuc: 'GAG', amin: 'Alanine' },
+  { nuc: 'GGU', amin: 'Alanine' },
+  { nuc: 'GGC', amin: 'Alanine' },
+  { nuc: 'GGA', amin: 'Alanine' },
+  { nuc: 'GGG', amin: 'Alanine' }
 ];
 
 // JBV - Function valuating the targeted textarea
@@ -41,7 +83,7 @@ function print_in_my_textarea(my_message) {
 }
 
 function from_nucleotid_2_aminacids(my_nucleotid) {
-  let tmp_nuc = nucleotids2aminacids.find(a => a.nuc == my_nucleotid);
+  let tmp_nuc = nucleicbases2aminacids.find(a => a.nuc == my_nucleotid);
   return tmp_nuc.amin;
 }
 
