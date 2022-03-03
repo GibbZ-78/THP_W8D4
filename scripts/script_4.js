@@ -1,3 +1,14 @@
+/******************************/
+/*                            */
+/*   Made with love & sweat   */
+/*                            */
+/*             by             */
+/*                            */
+/*      -~={ GIBBZ }=~-       */
+/*                            */
+/*  (c) 2022 Itemacy for THP  */
+/******************************/
+
 // JBV - Global constant: table of hashes containing the Who's who !
 const entrepreneurs = [
   { first: 'Steve', last: 'Jobs', year: 1955 },

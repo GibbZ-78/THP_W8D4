@@ -1,3 +1,14 @@
+/******************************/
+/*                            */
+/*   Made with love & sweat   */
+/*                            */
+/*             by             */
+/*                            */
+/*      -~={ GIBBZ }=~-       */
+/*                            */
+/*  (c) 2022 Itemacy for THP  */
+/******************************/
+
 // JBV - Global constant: table of hashes containing... Books. How original ;-)
 const books = [
   { title: 'Gatsby le magnifique', id: 133712, rented: 39 },
